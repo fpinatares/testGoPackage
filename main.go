@@ -1,13 +1,19 @@
-package numbers
+package main
 
-import "math"
+import (
+	"fmt"
 
-// Checks if a number is prime or not
-func IsPrime(num int) bool {
-    for i := 2; i <= int(math.Floor(math.Sqrt(float64(num)))); i++ {
-        if num%i == 0 {
-            return false
-        }
-	}
-    return num > 1
+	"github.com/fpinatares/couponEvaluator"
+)
+
+// Package Alias
+
+func main() {
+	requiredKeys := []string{"total", "amount"}
+	parameters := make(map[string]interface{}, 8)
+	parameters["total"] = 1000
+	parameters["amount"] = 500
+	fmt.Println("df")
+	fdf := couponEvaluator.Evaluate(requiredKeys, parameters, "total < amount")
+	fmt.Println(fdf)
 }
